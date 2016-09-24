@@ -1,3 +1,4 @@
 String.prototype.hasVowels = function() {
-    return true;
+    var inputString = this;
+    return /[aeiou]/gi.test(inputString);
 }
