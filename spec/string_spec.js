@@ -6,4 +6,8 @@ describe('hasVowels()', function() {
     it('should return true if string has vowels', function() {
         expect('oreofe'.hasVowels()).toBe(true);
     });
+
+    it('should return false if string has no vowels', function() {
+        expect('why'.hasVowels()).toBe(false);
+    });
 });
