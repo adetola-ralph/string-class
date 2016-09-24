@@ -1,3 +1,3 @@
-String.prototype.hasVowel = function() {
+String.prototype.hasVowels = function() {
     return true;
 }
