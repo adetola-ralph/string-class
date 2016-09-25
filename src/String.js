@@ -26,3 +26,7 @@ String.prototype.toUpper = function() {
         return String.fromCharCode(string.charCodeAt(position)-32);
     });
 };
+
+String.prototype.toLower = function() {
+    return "";
+};
