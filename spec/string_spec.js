@@ -30,4 +30,10 @@ describe('toLower()', function() {
     it('should return a string', function() {
         expect('example string'.toLower()).toEqual(jasmine.any(String));
     });
+
+    it('shoudl return a lower case of the calling string', function() {
+        expect('LOWER CASE'.toLower()).toBe('lower case');
+        expect('PascalCaseD'.toLower()).toBe('pascalcased');
+        expect('MiXeDcAsE'.toLower()).toBe('mixedcase');
+    });
 });
