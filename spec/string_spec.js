@@ -25,3 +25,9 @@ describe('toUpper()', function() {
         expect('MiXeD cAsE'.toUpper()).toBe('MIXED CASE');
     });
 });
+
+describe('toLower()', function() {
+    it('should return a string', function() {
+        expect('example string'.toLower()).toEqual(jasmine.any(String));
+    });
+});
