@@ -21,10 +21,8 @@ String.prototype.hasVowels = function() {
  * @return {String} returns an upperCase version of the calling string
  */
 String.prototype.toUpper = function() {
-    var inputString = this;
-    var lowerCasePattern = /[a-z]/g;
-
-    return inputString.replace(lowerCasePattern, function(item, position, string) {
+    // the 'this' keyword represents the string calling the function
+    return this.replace(/[a-z]/g, function(item, position, string) {
         return String.fromCharCode(string.charCodeAt(position)-32);
     });
 };
