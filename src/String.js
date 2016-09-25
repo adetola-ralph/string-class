@@ -11,3 +11,7 @@ String.prototype.hasVowels = function() {
     var inputString = this;
     return /[aeiou]/gi.test(inputString);
 };
+
+String.prototype.toUpper = function() {
+    return "";
+};
