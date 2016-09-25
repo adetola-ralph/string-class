@@ -11,3 +11,18 @@ String.prototype.hasVowels = function() {
     var inputString = this;
     return /[aeiou]/gi.test(inputString);
 };
+
+/**
+ * To Upper
+ * 
+ * toUpper converts its calling string to all uppercase characters
+ * 
+ * @param {void}
+ * @return {String} returns an upperCase version of the calling string
+ */
+String.prototype.toUpper = function() {
+    // the 'this' keyword represents the string calling the function
+    return this.replace(/[a-z]/g, function(item, position, string) {
+        return String.fromCharCode(string.charCodeAt(position)-32);
+    });
+};

@@ -13,3 +13,15 @@ describe('hasVowels()', function() {
         expect(('twyndyllyngs').hasVowels()).toBe(false);
     });
 });
+
+describe('toUpper()', function() {
+    it('should always return a string', function() {
+        expect('example string'.toUpper()).toEqual(jasmine.any(String));
+    });
+
+    it('should return an upper case of the calling string', function() {
+        expect('upper case'.toUpper()).toBe('UPPER CASE');
+        expect('camelCase'.toUpper()).toBe('CAMELCASE');
+        expect('MiXeD cAsE'.toUpper()).toBe('MIXED CASE');
+    });
+});
