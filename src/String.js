@@ -26,3 +26,10 @@ String.prototype.toUpper = function() {
         return String.fromCharCode(string.charCodeAt(position)-32);
     });
 };
+
+String.prototype.toLower = function() {
+    // the 'this' keyword represents the string calling the function
+    return this.replace(/[A-Z]/g, function(item, position, string) {
+        return String.fromCharCode(string.charCodeAt(position)+32);
+    });
+};
