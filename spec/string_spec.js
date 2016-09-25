@@ -13,3 +13,9 @@ describe('hasVowels()', function() {
         expect(('twyndyllyngs').hasVowels()).toBe(false);
     });
 });
+
+describe('toUpper()', function() {
+    it('should always return a string', function() {
+        expect('example string'.toUpper()).toEqual(jasmine.any(String));
+    });
+});
