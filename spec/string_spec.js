@@ -84,5 +84,20 @@ describe('words()', function() {
 
     it('should return empty array if no words are found', function() {
         expect(',./;[]=-'.words()).toEqual([]);
-    })
+    });
+});
+
+describe('wordCount()', function(){
+    it('should always return type Number', function(){
+        expect('this string'.wordCount()).toEqual(jasmine.any(Number));
+    });
+
+    it('should return number of words in a string', function() {
+        expect('this is a string of words'.wordCount()).toBe(6);
+        expect('My name is Ore-ofe'.wordCount()).toBe(4);
+    });
+
+    it('should return 0 if string contains no word', function() {
+        expect(',./;[]=-'.wordCount()).toBe(0);
+    });
 });
