@@ -53,4 +53,14 @@ describe('isQuestion()', function() {
     it('should always return a boolean', function() {
         expect('example string'.isQuestion()).toEqual(jasmine.any(Boolean));
     });
+
+    it('should return true if string is a question', function() {
+        expect('is a question?'.isQuestion()).toBe(true);
+        expect('Is Another Question?'.isQuestion()).toBe(true);
+    });
+
+    it('should return false if string is not a question', function() {
+        expect('is not a question'.isQuestion()).toBe(false);
+        expect('Is not Another Question?'.isQuestion()).toBe(false);
+    });
 });
