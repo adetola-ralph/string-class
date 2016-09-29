@@ -84,5 +84,11 @@ describe('words()', function() {
 
     it('should return empty array if no words are found', function() {
         expect(',./;[]=-'.words()).toEqual([]);
-    })
+    });
+});
+
+describe('wordCount()', function(){
+    it('should always return type Number', function(){
+        expect('this string'.wordCount()).toEqual(jasmine.any(Number));
+    });
 });
