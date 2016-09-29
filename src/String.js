@@ -99,5 +99,5 @@ String.prototype.words = function() {
  * string
  */
 String.prototype.wordCount = function() {
-    return 1;
+    return this.words().length;
 };
