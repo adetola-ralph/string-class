@@ -49,3 +49,18 @@ String.prototype.ucFirst = function() {
         return item.toUpper();
     });
 };
+
+/**
+ * Is Question
+ * 
+ * isQuestion checks if a string is a question. It does this by
+ * checking if it contains a question mark at the end of the 
+ * string
+ * 
+ * @param {void}
+ * @return {Boolean}returns a true or false indicating if the
+ * string is a question or not
+ */
+String.prototype.isQuestion = function() {
+    return /((\?)$)/g.test(this);
+};
