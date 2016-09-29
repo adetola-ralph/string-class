@@ -43,7 +43,7 @@ describe('ucFirst()', function() {
         expect(''.ucFirst()).toEqual(jasmine.any(String));
     });
 
-    it('should return the word with the first character in uppercase', function() {
+    it('should convert first character to uppercase', function() {
         expect('oreofe'.ucFirst()).toBe('Oreofe');
         expect('Ralph'.ucFirst()).toBe('Ralph');
     });
