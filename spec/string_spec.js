@@ -31,9 +31,20 @@ describe('toLower()', function() {
         expect('example string'.toLower()).toEqual(jasmine.any(String));
     });
 
-    it('shoudl return a lower case of the calling string', function() {
+    it('should return a lower case of the calling string', function() {
         expect('LOWER CASE'.toLower()).toBe('lower case');
         expect('PascalCaseD'.toLower()).toBe('pascalcased');
         expect('MiXeDcAsE'.toLower()).toBe('mixedcase');
+    });
+});
+
+describe('ucFirst()', function() {
+    it('should return a string', function() {
+        expect(''.ucFirst()).toEqual(jasmine.any(String));
+    });
+
+    it('should convert first character to uppercase', function() {
+        expect('oreofe'.ucFirst()).toBe('Oreofe');
+        expect('Ralph'.ucFirst()).toBe('Ralph');
     });
 });
