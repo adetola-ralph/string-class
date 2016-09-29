@@ -74,5 +74,8 @@ String.prototype.isQuestion = function() {
  * @return {Object | Array} returns an array of strings
  */
 String.prototype.words = function() {
-    return [];
+    // tests for words that have a hyphen between them
+    // like a compound name, also tests for words that
+    // have an apostrophe
+    return this.match(/(\w+([-']\w+)*)/g);
 };
