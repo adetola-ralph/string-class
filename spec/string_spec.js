@@ -64,3 +64,13 @@ describe('isQuestion()', function() {
         expect('Is not Another Question'.isQuestion()).toBe(false);
     });
 });
+
+describe('words()', function() {
+    it('should always return a typeof object', function() {
+        expect('this is an example string'.words()).toEqual(jasmine.any(Object));
+    });
+
+    it('should always return an array', function() {
+        expect('this is an example string'.words() instanceof Array).toBe(true);
+    });
+});
