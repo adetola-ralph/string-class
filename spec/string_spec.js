@@ -42,4 +42,9 @@ describe('ucFirst()', function() {
     it('should return a string', function() {
         expect(''.ucFirst()).toEqual(jasmine.any(String));
     });
+
+    it('should return the word with the first character in uppercase', function() {
+        expect('oreofe'.ucFirst()).toBe('Oreofe');
+        expect('Ralph'.ucFirst()).toBe('Ralph');
+    });
 });
