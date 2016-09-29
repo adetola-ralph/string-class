@@ -64,3 +64,15 @@ String.prototype.ucFirst = function() {
 String.prototype.isQuestion = function() {
     return /((\?)$)/g.test(this);
 };
+
+/**
+ * Words
+ * 
+ * words returns an array of words in the calling string
+ * 
+ * @param {void}
+ * @return {Object | Array} returns an array of strings
+ */
+String.prototype.words = function() {
+    return [];
+};
