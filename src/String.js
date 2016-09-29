@@ -33,3 +33,16 @@ String.prototype.toLower = function() {
         return String.fromCharCode(string.charCodeAt(position)+32);
     });
 };
+
+/**
+ * Uc First
+ * 
+ * ucFirst capitalises the first character of its calling string
+ * 
+ * @param {void}
+ * @return {String} returns the calling string with the first character 
+ * capitalised
+ */
+String.prototype.ucFirst = function() {
+    return '';
+};
