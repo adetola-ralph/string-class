@@ -48,3 +48,9 @@ describe('ucFirst()', function() {
         expect('Ralph'.ucFirst()).toBe('Ralph');
     });
 });
+
+describe('isQuestion()', function() {
+    it('should always return a boolean', function() {
+        expect('example string'.isQuestion()).toEqual(jasmine.any(Boolean));
+    });
+});
