@@ -64,3 +64,27 @@ String.prototype.ucFirst = function() {
 String.prototype.isQuestion = function() {
     return /((\?)$)/g.test(this);
 };
+
+/**
+ * Words
+ * 
+ * words returns an array of words in the calling string
+ * 
+ * @param {void}
+ * @return {Object | Array} returns an array of strings
+ */
+String.prototype.words = function() {
+    // tests for words that have a hyphen between them
+    // like a compound name, also tests for words that
+    // have an apostrophe
+    let result = this.match(/(\w+([-']\w+)*)/g);
+
+    // checks if result is null
+    if(result) {
+        return result;
+    }
+
+    // return an empty array if there are no words 
+    // in the string
+    return [];
+};
