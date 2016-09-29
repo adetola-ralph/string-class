@@ -67,7 +67,8 @@ describe('isQuestion()', function() {
 
 describe('words()', function() {
     it('should always return a typeof object', function() {
-        expect('this is an example string'.words()).toEqual(jasmine.any(Object));
+        expect('this is an example string'.words())
+            .toEqual(jasmine.any(Object));
     });
 
     it('should always return an array', function() {
@@ -77,6 +78,11 @@ describe('words()', function() {
     it('should return an array of words in the string', function() {
         expect('this is a string of words'.words()).toEqual(['this', 'is', 
         'a', 'string', 'of', 'words']);
-        expect('My name is Ore-ofe'.words()).toEqual(['My', 'name', 'is', 'Ore-ofe']);
+        expect('My name is Ore-ofe'.words())
+            .toEqual(['My', 'name', 'is', 'Ore-ofe']);
     });
+
+    it('should return empty array if no words are found', function() {
+        expect(',./;[]=-'.words()).toEqual([]);
+    })
 });
