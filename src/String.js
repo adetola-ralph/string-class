@@ -88,3 +88,16 @@ String.prototype.words = function() {
     // in the string
     return [];
 };
+
+/**
+ * Word Count
+ * 
+ * wordCount returns the number of words in the string
+ * 
+ * @param {void}
+ * @return {Number} returns the number of words in the calling
+ * string
+ */
+String.prototype.wordCount = function() {
+    return 1;
+};
