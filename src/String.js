@@ -62,5 +62,5 @@ String.prototype.ucFirst = function() {
  */
 
 String.prototype.isQuestion = function() {
-    return true;
+    return /((\?)$)/g.test(this);
 }

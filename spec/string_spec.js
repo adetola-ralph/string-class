@@ -61,6 +61,6 @@ describe('isQuestion()', function() {
 
     it('should return false if string is not a question', function() {
         expect('is not a question'.isQuestion()).toBe(false);
-        expect('Is not Another Question?'.isQuestion()).toBe(false);
+        expect('Is not Another Question'.isQuestion()).toBe(false);
     });
 });
