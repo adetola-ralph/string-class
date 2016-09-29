@@ -44,5 +44,7 @@ String.prototype.toLower = function() {
  * capitalised
  */
 String.prototype.ucFirst = function() {
-    return '';
+    return this.replace(/^[a-z]/g, function(item, position, string) {
+		return item.toUpper();
+	});
 };
