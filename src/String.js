@@ -172,3 +172,15 @@ String.prototype.inverseCase = function() {
     });
     return inverseSplitString.join('');    
 };
+
+/**
+ * Alternating Case
+ * 
+ * todo: some text
+ * 
+ * @param {void}
+ * @return{String} to: some text
+ */
+String.prototype.alternatingCase = function() {
+    return '';
+};
