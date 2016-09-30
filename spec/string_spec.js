@@ -116,3 +116,13 @@ describe('toCurrency()', function() {
         expect('1234.123'.toCurrency()).toBe('1,234.12');
     });
 });
+
+describe('fromCurrency()', function() {
+    it('should return a number', function() {
+        expect('111,111.00'.fromCurrency()).toEqual(jasmine.any(Number));
+    });
+
+    it('should return number of its calling string', function() {
+        expect('3,123,456.78'.fromCurrency()).toBe(3123456.78);
+    });
+});
