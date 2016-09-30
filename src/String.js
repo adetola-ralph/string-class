@@ -146,5 +146,5 @@ String.prototype.toCurrency = function() {
  * @return {Number} 
  */
 String.prototype.fromCurrency = function() {
-    return 0;
+    return Number(this.replace(/,/g, ''));
 };
