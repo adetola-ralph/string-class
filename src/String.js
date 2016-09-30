@@ -149,3 +149,26 @@ String.prototype.toCurrency = function() {
 String.prototype.fromCurrency = function() {
     return Number(this.replace(/,/g, ''));
 };
+
+/**
+ * Inverse Case
+ * 
+ * inverseCase takes its calling string and inverses the
+ * cases of its characters.
+ * 
+ * @param {void}
+ * @return {String} returns a string which is in inverse case 
+ * of its calling string
+ */
+String.prototype.inverseCase = function() {
+    var splitString = this.split('');
+    var inverseSplitString = splitString.map(function(item, position) {
+        if(/[a-z]/.test(item)) {
+            return item.toUpper();
+        } else if(/[A-Z]/.test(item)) {
+            return item.toLower();
+        }
+        return item;
+    });
+    return inverseSplitString.join('');    
+};
