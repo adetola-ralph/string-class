@@ -115,14 +115,21 @@ String.prototype.wordCount = function() {
 String.prototype.toCurrency = function() {
     var splitString = this.split('.');
 
-    //TODO: add comment here
-    splitString[0] = splitString[0].replace(/\d(?=([\d]{3})+$)/g, function(item){
+    // this regex searches for a digit that has exactly three
+    // digits after it and adds a comma after the digit. $
+    // makes sure the pattern starts at the end of the string.
+    // ?= and {3} asserts that there are exactly three digits
+    splitString[0] = splitString[0]
+        .replace(/\d(?=([\d]{3})+$)/g, function(item){
         return item+',';
     });
 
     var result = splitString[0];
 
-    if(splitString.length>1) {
+    if(splitString.length > 1) {
+        // if the length of the digit after the decimal point
+        // more than 2 then truncate the other digits
+        splitString[1] = splitString[1].match(/(\d{1,2})/)[0];
         result = splitString.join('.');
     }
 

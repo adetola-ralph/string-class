@@ -113,6 +113,6 @@ describe('toCurrency()', function() {
     });
 
     it('should truncate excess numbers after decimal point', function() {
-        expect('1234.123'.toCurency()).toBe('1,234.12');
+        expect('1234.123'.toCurrency()).toBe('1,234.12');
     })
 });
