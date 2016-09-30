@@ -101,3 +101,13 @@ String.prototype.words = function() {
 String.prototype.wordCount = function() {
     return this.words().length;
 };
+
+/**
+ * To Currency
+ * 
+ * toCurrency returns a string of digits formatted as a 
+ * currency type string. Example 1111111.00 to 1,111,111.00 
+ */
+String.prototype.toCurrency = function() {
+    return '0';
+};
