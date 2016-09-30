@@ -147,3 +147,15 @@ describe('alternatingCase()', function() {
         expect('Onomatopoeia'.alternatingCase()).toBe('oNoMaToPoEiA');
     });
 });
+
+describe('getMiddle()', function() {
+    it('should return a string', function() {
+        expect('read'.getMiddle()).toEqual(jasmine.any(String));
+    });
+
+    it('should return middle of the word', function() {
+        expect('read'.getMiddle()).toBe('ea');
+        expect('rap'.getMiddle()).toBe('a');
+        expect('hendricks'.getMiddle()).toBe('r');
+    });
+});

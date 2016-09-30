@@ -192,3 +192,22 @@ String.prototype.alternatingCase = function() {
         }
     });
 };
+
+/**
+ * Get Middle
+ * 
+ * getMiddle gets its calling string. It returns the 2 middle
+ * characters if the string's length is even
+ * 
+ * @param {void}
+ * @return {String} returns the middle word(s) of the string
+ */
+String.prototype.getMiddle = function() {
+    var value = this. split('');
+
+    var half = value.length / 2;
+    if (value.length % 2 === 0) {
+        return value.slice(half-1, half+1).join('');
+    }
+    return value[parseInt(half)];
+};
