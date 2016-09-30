@@ -106,4 +106,9 @@ describe('toCurrency()', function() {
     it('should return a string', function() {
         expect('111111.00'.toCurrency()).toEqual(jasmine.any(String));
     });
+
+    it('should return a currency formatted string', function() {
+        expect('111111.89'.toCurrency()).toBe('111,111.89');
+        expect('2111111.89'.toCurrency()).toBe('2,111,111.89');
+    });
 });
