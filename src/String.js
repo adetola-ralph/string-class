@@ -106,8 +106,25 @@ String.prototype.wordCount = function() {
  * To Currency
  * 
  * toCurrency returns a string of digits formatted as a 
- * currency type string. Example 1111111.00 to 1,111,111.00 
+ * currency type string. Example 1111111.00 to 1,111,111.00
+ * 
+ * @param {void}
+ * @return {String} returns the currency formatted string of 
+ * its calling string
  */
 String.prototype.toCurrency = function() {
-    return '0';
+    var splitString = this.split('.');
+
+    //TODO: add comment here
+    splitString[0] = splitString[0].replace(/\d(?=([\d]{3})+$)/g, function(item){
+        return item+',';
+    });
+
+    var result = splitString[0];
+
+    if(splitString.length>1) {
+        result = splitString.join('.');
+    }
+
+    return result; 
 };
