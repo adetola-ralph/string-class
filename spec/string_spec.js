@@ -126,3 +126,14 @@ describe('fromCurrency()', function() {
         expect('3,123,456.78'.fromCurrency()).toBe(3123456.78);
     });
 });
+
+describe('inverseCase()', function() {
+    it('should return a string', function() {
+        expect('Mr Ben'.inverseCase()).toEqual(jasmine.any(String));
+    });
+
+    it('should return inverse characters of its calling string', function() {
+        expect('Mr Ben'.inverseCase()).toBe('mR bEN');
+        expect('Big Mighty Mouse'.inverseCase()).toBe('bIG mIGHTY mOUSE');
+    });
+});
