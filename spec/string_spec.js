@@ -101,3 +101,9 @@ describe('wordCount()', function(){
         expect(',./;[]=-'.wordCount()).toBe(0);
     });
 });
+
+describe('toCurrency()', function() {
+    it('should return a string', function() {
+        expect('111111.00'.toCurrency()).toEqual(jasmine.any(String));
+    });
+});
