@@ -159,3 +159,9 @@ describe('getMiddle()', function() {
         expect('hendricks'.getMiddle()).toBe('r');
     });
 });
+
+describe('numberWords()', function() {
+    it('should return a string', function() {
+        expect('1234'.numberWords()).toEqual(jasmine.any(String));
+    });
+});
