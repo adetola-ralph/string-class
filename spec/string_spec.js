@@ -164,4 +164,8 @@ describe('numberWords()', function() {
     it('should return a string', function() {
         expect('1234'.numberWords()).toEqual(jasmine.any(String));
     });
+
+    it('should return the string word equivalent of the digits', function(){
+        expect('123'.numberWords()).toBe('one two three');
+    });
 });
