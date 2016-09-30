@@ -135,3 +135,16 @@ String.prototype.toCurrency = function() {
 
     return result; 
 };
+
+/**
+ * From Currency
+ * 
+ * fromCurrency converts from currency formatted string to a
+ * number
+ * 
+ * @param {void}
+ * @return {Number} 
+ */
+String.prototype.fromCurrency = function() {
+    return 0;
+};
