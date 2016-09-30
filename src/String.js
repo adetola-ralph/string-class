@@ -162,7 +162,7 @@ String.prototype.fromCurrency = function() {
  */
 String.prototype.inverseCase = function() {
     var splitString = this.split('');
-    var inverseSplitString = splitString.map(function(item, position) {
+    var inverseSplitString = splitString.map(function(item) {
         if(/[a-z]/.test(item)) {
             return item.toUpper();
         } else if(/[A-Z]/.test(item)) {
