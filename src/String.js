@@ -176,11 +176,19 @@ String.prototype.inverseCase = function() {
 /**
  * Alternating Case
  * 
- * todo: some text
+ * alternatingCase takes its calling string and returns it with 
+ * all its characters in alternating case
  * 
  * @param {void}
- * @return{String} to: some text
+ * @return{String} returns the calling string with its characters in
+ * alternating cases.
  */
 String.prototype.alternatingCase = function() {
-    return '';
+    return this.replace(/[a-zA-Z]/gi, function(item, position){
+        if(position%2 === 0) {
+            return item.toLower();
+        } else if (position%2 !== 0) {
+            return item.toUpper();
+        }
+    });
 };

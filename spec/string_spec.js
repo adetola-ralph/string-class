@@ -145,5 +145,5 @@ describe('alternatingCase()', function() {
 
     it('should return alternating case string', function() {
         expect('Onomatopoeia'.alternatingCase()).toBe('oNoMaToPoEiA');
-    })
+    });
 });
