@@ -111,4 +111,8 @@ describe('toCurrency()', function() {
         expect('111111.89'.toCurrency()).toBe('111,111.89');
         expect('2111111.89'.toCurrency()).toBe('2,111,111.89');
     });
+
+    it('should truncate excess numbers after decimal point', function() {
+        expect('1234.123'.toCurency()).toBe('1,234.12');
+    })
 });
