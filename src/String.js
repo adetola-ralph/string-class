@@ -143,7 +143,8 @@ String.prototype.toCurrency = function() {
  * number
  * 
  * @param {void}
- * @return {Number} 
+ * @return {Number} returns a number representing the number
+ * form of it calling string.
  */
 String.prototype.fromCurrency = function() {
     return Number(this.replace(/,/g, ''));
