@@ -137,3 +137,9 @@ describe('inverseCase()', function() {
         expect('Big Mighty Mouse'.inverseCase()).toBe('bIG mIGHTY mOUSE');
     });
 });
+
+describe('alternatingCase()', function() {
+    it('should return a string', function() {
+        expect('Onomatopoeia'.alternatingCase()).toEqual(jasmine.any(String));
+    });
+});
