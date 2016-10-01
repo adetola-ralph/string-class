@@ -21,6 +21,42 @@
                     </ul>
                 </div>
             </nav>
+            <div class="row">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Enter text</label>
+                        <input type="text" class="form-control input-text" id="input-text">
+                    </div>
+                    <select class="form-control string-method" id="string-method">
+                        <option value="0">hasVowel()</option>
+                        <option value="1">toUpper()</option>
+                        <option value="2">toLower()</option>
+                        <option value="3">ucFirst()</option>
+                        <option value="4">isQuestion()</option>
+                        <option value="5">words()</option>
+                        <option value="6">wordCount()</option>
+                        <option value="7">toCurrency()</option>
+                        <option value="8">fromCurrency()</option>
+                        <option value="9">inverseCase()</option>
+                        <option value="10">alternatingCase()</option>
+                        <option value="11">getMiddle()</option>
+                        <option value="12">numberWords()</option>
+                        <option value="13">isDigit()</option>
+                        <option value="14">doubleCheck()</option>
+                    </select>
+                    <button type="submit" class="btn btn-default" id="submit">Submit</button>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="well well-lg">
+                        <p id="result"></p>
+                    </div>
+                </div>
+                
+            </div>
         </div>
+        <script src="src/String.js"></script>
+        <script src="src/script.js"></script>
     </body>
 </html>
