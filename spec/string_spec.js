@@ -184,3 +184,19 @@ describe('isDigit()', function(){
         expect('a'.isDigit()).toBe(false);
     });
 });
+
+describe('doubleCheck()', function() {
+    it('should return a boolean', function() {
+        expect('aa'.doubleCheck()).toEqual(jasmine.any(Boolean));
+    });
+
+    it('should return true if string has double characters', function() {
+        expect('aa'.doubleCheck()).toBe(true);
+        expect('oreofeooluwapo'.doubleCheck()).toBe(true);
+    });
+
+    it('should return false if string has no double characters', function() {
+        expect('ab'.doubleCheck()).toBe(false);
+        expect('oreofe'.doubleCheck()).toBe(false);
+    });
+});
