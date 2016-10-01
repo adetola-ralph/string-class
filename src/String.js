@@ -77,7 +77,7 @@ String.prototype.words = function() {
     // tests for words that have a hyphen between them
     // like a compound name, also tests for words that
     // have an apostrophe
-    let result = this.match(/(\w+([-']\w+)*)/g);
+    var result = this.match(/(\w+([-']\w+)*)/g);
 
     // checks if result is null
     if(result) {
@@ -258,4 +258,21 @@ String.prototype.isDigit = function() {
     // a digit, the first check doesn't catch single alphabets thus 
     // necessitating the second regex
     return (!/[\W\w\d]+([\w\W\d]+)/.test(this) && /\d/.test(this));
+};
+
+/**
+ * Double Check
+ * 
+ * doubleCheck checks if its calling sring contains a double character
+ * following after itself
+ * 
+ * @param {void}
+ * @return {Boolean} returns true if the string has a double character
+ * and false if not
+ */
+String.prototype.doubleCheck = function() {
+    // checks if the samealphanumeric and non-alphanumeric characters 
+    // exists side by side. \1 checks if the preceding group is repeated
+    // after itself
+    return /([\w\W])\1/gi.test(this);
 };
