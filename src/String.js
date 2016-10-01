@@ -257,5 +257,5 @@ String.prototype.isDigit = function() {
     // before and after them. The second regex checks if the value is
     // a digit, the first check doesn't catch single alphabets thus 
     // necessitating the second regex
-    return (!/[\W\w\d]+([\w\W\d]+)/.test(this) && /\d/.test(this))
+    return (!/[\W\w\d]+([\w\W\d]+)/.test(this) && /\d/.test(this));
 };
