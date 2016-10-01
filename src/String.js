@@ -77,7 +77,7 @@ String.prototype.words = function() {
     // tests for words that have a hyphen between them
     // like a compound name, also tests for words that
     // have an apostrophe
-    let result = this.match(/(\w+([-']\w+)*)/g);
+    var result = this.match(/(\w+([-']\w+)*)/g);
 
     // checks if result is null
     if(result) {
@@ -275,4 +275,4 @@ String.prototype.doubleCheck = function() {
     // exists side by side. \1 checks if the preceding group is repeated
     // after itself
     return /([\w\W])\1/gi.test(this);
-}
+};
