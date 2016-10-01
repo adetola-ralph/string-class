@@ -239,3 +239,23 @@ String.prototype.numberWords = function() {
         return item;
     }).join(' ').replace(/\s+/g, ' ');
 };
+
+/**
+ * Is Digit 
+ * 
+ * isDigit tests if its calling string contains only one digit
+ * or not.
+ * 
+ * @param {void}
+ * @return {Boolean} returns true for single digit strings and 
+ * false for otherwise
+ */
+String.prototype.isDigit = function() {
+    // the regex tests for strings that start with non-alphanumeric,
+    // alphanumeric and digit values and have other values after
+    // them. It matched double digits and more, digits with alphabets
+    // before and after them. The second regex checks if the value is
+    // a digit, the first check doesn't catch single alphabets thus 
+    // necessitating the second regex
+    return (!/[\W\w\d]+([\w\W\d]+)/.test(this) && /\d/.test(this));
+};

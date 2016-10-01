@@ -169,3 +169,18 @@ describe('numberWords()', function() {
         expect('123'.numberWords()).toBe('one two three');
     });
 });
+
+describe('isDigit()', function(){
+    it('should return a boolean', function() {
+        expect('1'.isDigit()).toEqual(jasmine.any(Boolean));
+    });
+
+    it('should return true for a single digit', function() {
+        expect('1'.isDigit()).toBe(true);
+    });
+
+    it('should return false for a non single digit', function() {
+        expect('12'.isDigit()).toBe(false);
+        expect('a'.isDigit()).toBe(false);
+    });
+});
