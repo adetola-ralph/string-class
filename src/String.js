@@ -203,11 +203,39 @@ String.prototype.alternatingCase = function() {
  * @return {String} returns the middle word(s) of the string
  */
 String.prototype.getMiddle = function() {
-    var value = this. split('');
+    // split the string just after any character, the regex matches
+    // null after any character(including space) in the string
+    var value = this. split(/(?=)/g);
 
     var half = value.length / 2;
     if (value.length % 2 === 0) {
         return value.slice(half-1, half+1).join('');
     }
     return value[parseInt(half)];
+};
+
+/**
+ * Number Words
+ * 
+ * numberWords returns the digits contained in the string
+ * in their word form. For example 1 to one, 2 to two.
+ * 
+ * @param {void}
+ * @return {String} return the word representation on the digits 
+ * in the string
+ */
+String.prototype.numberWords = function() {
+    // array of numbers in their digit form, with each number
+    // the same as the index position of the array
+    var words = ['zero', 'one', 'two', 'three', 'four', 'five', 
+                'six', 'seven', 'eight', 'nine'];
+    
+    // split the string just after any character, the regex matches
+    // null after any character(including space) in the string
+    return this.split(/(?=)/g).map(function(item) {
+        if(/\d/.test(item)) {
+            return words[parseInt(item, 10)];
+        }
+        return item;
+    }).join(' ').replace(/\s+/g, ' ');
 };
