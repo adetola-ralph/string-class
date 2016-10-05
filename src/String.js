@@ -113,6 +113,10 @@ String.prototype.wordCount = function() {
  * its calling string
  */
 String.prototype.toCurrency = function() {
+    if(/[^\d\.]/.test(this)) {
+        return 'Please enter a valid digit string';
+    }
+
     var splitString = this.split('.');
 
     // this regex searches for a digit that has exactly three
@@ -276,5 +280,5 @@ String.prototype.doubleCheck = function() {
     // checks if the samealphanumeric and non-alphanumeric characters 
     // exists side by side. \1 checks if the preceding group is repeated
     // after itself
-    return /([\w\W])\1/gi.test(this);
+    return /(.)\1/gi.test(this);
 };
