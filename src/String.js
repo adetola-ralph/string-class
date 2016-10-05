@@ -9,7 +9,7 @@
  */
 String.prototype.hasVowels = function() {
     var inputString = this;
-    return /[aeiou]/gi.test(inputString);
+    return /[aeiou]/i.test(inputString);
 };
 
 /**
