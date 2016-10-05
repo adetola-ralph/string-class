@@ -23,14 +23,14 @@ String.prototype.hasVowels = function() {
 String.prototype.toUpper = function() {
     // the 'this' keyword represents the string calling the function
     return this.replace(/[a-z]/g, function(item, position, string) {
-        return String.fromCharCode(string.charCodeAt(position)-32);
+        return String.fromCharCode(string.charCodeAt(position) - 32);
     });
 };
 
 String.prototype.toLower = function() {
     // the 'this' keyword represents the string calling the function
     return this.replace(/[A-Z]/g, function(item, position, string) {
-        return String.fromCharCode(string.charCodeAt(position)+32);
+        return String.fromCharCode(string.charCodeAt(position) + 32);
     });
 };
 
@@ -121,7 +121,7 @@ String.prototype.toCurrency = function() {
     // ?= and {3} asserts that there are exactly three digits
     splitString[0] = splitString[0]
         .replace(/\d(?=([\d]{3})+$)/g, function(item){
-        return item+',';
+        return item + ',';
     });
 
     var result = splitString[0];
@@ -185,9 +185,9 @@ String.prototype.inverseCase = function() {
  */
 String.prototype.alternatingCase = function() {
     return this.replace(/[a-zA-Z]/gi, function(item, position){
-        if(position%2 === 0) {
+        if(position % 2 === 0) {
             return item.toLower();
-        } else if (position%2 !== 0) {
+        } else if (position % 2 !== 0) {
             return item.toUpper();
         }
     });
@@ -209,7 +209,7 @@ String.prototype.getMiddle = function() {
 
     var half = value.length / 2;
     if (value.length % 2 === 0) {
-        return value.slice(half-1, half+1).join('');
+        return value.slice(half - 1, half + 1).join('');
     }
     return value[parseInt(half)];
 };
@@ -227,8 +227,10 @@ String.prototype.getMiddle = function() {
 String.prototype.numberWords = function() {
     // array of numbers in their digit form, with each number
     // the same as the index position of the array
-    var words = ['zero', 'one', 'two', 'three', 'four', 'five', 
-                'six', 'seven', 'eight', 'nine'];
+    var words = [
+        'zero', 'one', 'two', 'three', 'four',
+        'five', 'six', 'seven', 'eight', 'nine'
+    ];
     
     // split the string just after any character, the regex matches
     // null after any character(including space) in the string
