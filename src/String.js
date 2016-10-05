@@ -253,13 +253,13 @@ String.prototype.numberWords = function() {
  * false for otherwise
  */
 String.prototype.isDigit = function() {
-    // the regex tests for strings that start with non-alphanumeric,
-    // alphanumeric and digit values and have other values after
-    // them. It matched double digits and more, digits with alphabets
-    // before and after them. The second regex checks if the value is
-    // a digit, the first check doesn't catch single alphabets thus 
-    // necessitating the second regex
-    return (!/[\W\w\d]+([\w\W\d]+)/.test(this) && /\d/.test(this));
+    /* the regex tests for strings that start with non-alphanumeric,
+       alphanumeric and digit values and have other values after
+       them. It matched double digits and more, digits with alphabets
+       before and after them. The second regex checks if the value is
+       a digit, the first check doesn't catch single alphabets thus 
+       necessitating the second regex */
+    return (/^(\d)$/.test(this) && /\d/.test(this));
 };
 
 /**
