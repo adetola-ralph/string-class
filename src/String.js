@@ -45,7 +45,7 @@ String.prototype.toLower = function() {
  */
 String.prototype.ucFirst = function() {
     // get the first character
-    return this.replace(/^[a-z]/g, function(item) {
+    return this.toLower().replace(/^[a-z]/, function(item) {
         return item.toUpper();
     });
 };
