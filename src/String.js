@@ -9,7 +9,7 @@
  */
 String.prototype.hasVowels = function() {
     var inputString = this;
-    return /[aeiou]/gi.test(inputString);
+    return /[aeiou]/i.test(inputString);
 };
 
 /**
@@ -23,14 +23,14 @@ String.prototype.hasVowels = function() {
 String.prototype.toUpper = function() {
     // the 'this' keyword represents the string calling the function
     return this.replace(/[a-z]/g, function(item, position, string) {
-        return String.fromCharCode(string.charCodeAt(position)-32);
+        return String.fromCharCode(string.charCodeAt(position) - 32);
     });
 };
 
 String.prototype.toLower = function() {
     // the 'this' keyword represents the string calling the function
     return this.replace(/[A-Z]/g, function(item, position, string) {
-        return String.fromCharCode(string.charCodeAt(position)+32);
+        return String.fromCharCode(string.charCodeAt(position) + 32);
     });
 };
 
@@ -45,7 +45,7 @@ String.prototype.toLower = function() {
  */
 String.prototype.ucFirst = function() {
     // get the first character
-    return this.replace(/^[a-z]/g, function(item) {
+    return this.toLower().replace(/^[a-z]/, function(item) {
         return item.toUpper();
     });
 };
@@ -62,7 +62,7 @@ String.prototype.ucFirst = function() {
  * string is a question or not
  */
 String.prototype.isQuestion = function() {
-    return /((\?)$)/g.test(this);
+    return /(((\w( )*)+\?)$)/g.test(this);
 };
 
 /**
@@ -113,6 +113,10 @@ String.prototype.wordCount = function() {
  * its calling string
  */
 String.prototype.toCurrency = function() {
+    if(/[^\d\.]/.test(this)) {
+        return 'Please enter a valid digit string';
+    }
+
     var splitString = this.split('.');
 
     // this regex searches for a digit that has exactly three
@@ -121,7 +125,7 @@ String.prototype.toCurrency = function() {
     // ?= and {3} asserts that there are exactly three digits
     splitString[0] = splitString[0]
         .replace(/\d(?=([\d]{3})+$)/g, function(item){
-        return item+',';
+        return item + ',';
     });
 
     var result = splitString[0];
@@ -185,9 +189,9 @@ String.prototype.inverseCase = function() {
  */
 String.prototype.alternatingCase = function() {
     return this.replace(/[a-zA-Z]/gi, function(item, position){
-        if(position%2 === 0) {
+        if(position % 2 === 0) {
             return item.toLower();
-        } else if (position%2 !== 0) {
+        } else if (position % 2 !== 0) {
             return item.toUpper();
         }
     });
@@ -209,7 +213,7 @@ String.prototype.getMiddle = function() {
 
     var half = value.length / 2;
     if (value.length % 2 === 0) {
-        return value.slice(half-1, half+1).join('');
+        return value.slice(half - 1, half + 1).join('');
     }
     return value[parseInt(half)];
 };
@@ -227,8 +231,10 @@ String.prototype.getMiddle = function() {
 String.prototype.numberWords = function() {
     // array of numbers in their digit form, with each number
     // the same as the index position of the array
-    var words = ['zero', 'one', 'two', 'three', 'four', 'five', 
-                'six', 'seven', 'eight', 'nine'];
+    var words = [
+        'zero', 'one', 'two', 'three', 'four',
+        'five', 'six', 'seven', 'eight', 'nine'
+    ];
     
     // split the string just after any character, the regex matches
     // null after any character(including space) in the string
@@ -251,13 +257,13 @@ String.prototype.numberWords = function() {
  * false for otherwise
  */
 String.prototype.isDigit = function() {
-    // the regex tests for strings that start with non-alphanumeric,
-    // alphanumeric and digit values and have other values after
-    // them. It matched double digits and more, digits with alphabets
-    // before and after them. The second regex checks if the value is
-    // a digit, the first check doesn't catch single alphabets thus 
-    // necessitating the second regex
-    return (!/[\W\w\d]+([\w\W\d]+)/.test(this) && /\d/.test(this));
+    /* the regex tests for strings that start with non-alphanumeric,
+       alphanumeric and digit values and have other values after
+       them. It matched double digits and more, digits with alphabets
+       before and after them. The second regex checks if the value is
+       a digit, the first check doesn't catch single alphabets thus 
+       necessitating the second regex */
+    return (/^(\d)$/.test(this) && /\d/.test(this));
 };
 
 /**
@@ -274,5 +280,5 @@ String.prototype.doubleCheck = function() {
     // checks if the samealphanumeric and non-alphanumeric characters 
     // exists side by side. \1 checks if the preceding group is repeated
     // after itself
-    return /([\w\W])\1/gi.test(this);
+    return /(.)\1/gi.test(this);
 };

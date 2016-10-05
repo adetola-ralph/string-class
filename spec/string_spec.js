@@ -46,6 +46,7 @@ describe('ucFirst()', function() {
     it('should convert first character to uppercase', function() {
         expect('oreofe'.ucFirst()).toBe('Oreofe');
         expect('Ralph'.ucFirst()).toBe('Ralph');
+        expect('rALPH'.ucFirst()).toBe('Ralph');
     });
 });
 
