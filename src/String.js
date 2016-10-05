@@ -62,7 +62,7 @@ String.prototype.ucFirst = function() {
  * string is a question or not
  */
 String.prototype.isQuestion = function() {
-    return /((\?)$)/g.test(this);
+    return /(((\w( )*)+\?)$)/g.test(this);
 };
 
 /**
