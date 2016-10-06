@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Checkpoint 2 String class test</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <style>
+            .navbar{
+                margin-top:20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">String Class test</a>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="SpecRunner.html">Jasmine Test</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="row">
+                <form class="form-inline" id="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Enter text</label>
+                        <input type="text" class="form-control input-text" id="input-text" name="input-text">
+                    </div>
+                    <select class="form-control string-method" id="string-method" name="string-method"> 
+                        <option value="hasVowels">hasVowel()</option>
+                        <option value="toUpper">toUpper()</option>
+                        <option value="toLower">toLower()</option>
+                        <option value="ucFirst">ucFirst()</option>
+                        <option value="isQuestion">isQuestion()</option>
+                        <option value="words">words()</option>
+                        <option value="wordCount">wordCount()</option>
+                        <option value="toCurrency">toCurrency()</option>
+                        <option value="fromCurrency">fromCurrency()</option>
+                        <option value="inverseCase">inverseCase()</option>
+                        <option value="alternatingCase">alternatingCase()</option>
+                        <option value="getMiddle">getMiddle()</option>
+                        <option value="numberWords">numberWords()</option>
+                        <option value="isDigit">isDigit()</option>
+                        <option value="doubleCheck">doubleCheck()</option>
+                    </select>
+                    <button type="submit" class="btn btn-default" id="submit">Submit</button>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="well well-lg">
+                        <p id="result"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <script src="src/String.js"></script>
+        <script src="src/script.js"></script>
+    </body>
+</html>
