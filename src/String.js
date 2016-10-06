@@ -1,8 +1,8 @@
 /**
  * Has Vowels
- * 
+ *
  * hasVowel tests if the String calling the function has a vowels
- * 
+ *
  * @param {void}
  * @return {Boolean} returns true or false indicating if the string
  * has a vowel or not
@@ -14,9 +14,9 @@ String.prototype.hasVowels = function() {
 
 /**
  * To Upper
- * 
+ *
  * toUpper converts its calling string to all uppercase characters
- * 
+ *
  * @param {void}
  * @return {String} returns an upperCase version of the calling string
  */
@@ -36,11 +36,11 @@ String.prototype.toLower = function() {
 
 /**
  * Uc First
- * 
+ *
  * ucFirst capitalises the first character of its calling string
- * 
+ *
  * @param {void}
- * @return {String} returns the calling string with the first character 
+ * @return {String} returns the calling string with the first character
  * capitalised
  */
 String.prototype.ucFirst = function() {
@@ -52,11 +52,11 @@ String.prototype.ucFirst = function() {
 
 /**
  * Is Question
- * 
+ *
  * isQuestion checks if a string is a question. It does this by
- * checking if it contains a question mark at the end of the 
+ * checking if it contains a question mark at the end of the
  * string
- * 
+ *
  * @param {void}
  * @return {Boolean}returns a true or false indicating if the
  * string is a question or not
@@ -67,9 +67,9 @@ String.prototype.isQuestion = function() {
 
 /**
  * Words
- * 
+ *
  * words returns an array of words in the calling string
- * 
+ *
  * @param {void}
  * @return {Object | Array} returns an array of strings
  */
@@ -84,16 +84,16 @@ String.prototype.words = function() {
         return result;
     }
 
-    // return an empty array if there are no words 
+    // return an empty array if there are no words
     // in the string
     return [];
 };
 
 /**
  * Word Count
- * 
+ *
  * wordCount returns the number of words in the string
- * 
+ *
  * @param {void}
  * @return {Number} returns the number of words in the calling
  * string
@@ -104,12 +104,12 @@ String.prototype.wordCount = function() {
 
 /**
  * To Currency
- * 
- * toCurrency returns a string of digits formatted as a 
+ *
+ * toCurrency returns a string of digits formatted as a
  * currency type string. Example 1111111.00 to 1,111,111.00
- * 
+ *
  * @param {void}
- * @return {String} returns the currency formatted string of 
+ * @return {String} returns the currency formatted string of
  * its calling string
  */
 String.prototype.toCurrency = function() {
@@ -137,15 +137,15 @@ String.prototype.toCurrency = function() {
         result = splitString.join('.');
     }
 
-    return result; 
+    return result;
 };
 
 /**
  * From Currency
- * 
+ *
  * fromCurrency converts from currency formatted string to a
  * number
- * 
+ *
  * @param {void}
  * @return {Number} returns a number representing the number
  * form of it calling string.
@@ -156,12 +156,12 @@ String.prototype.fromCurrency = function() {
 
 /**
  * Inverse Case
- * 
+ *
  * inverseCase takes its calling string and inverses the
  * cases of its characters.
- * 
+ *
  * @param {void}
- * @return {String} returns a string which is in inverse case 
+ * @return {String} returns a string which is in inverse case
  * of its calling string
  */
 String.prototype.inverseCase = function() {
@@ -174,15 +174,15 @@ String.prototype.inverseCase = function() {
         }
         return item;
     });
-    return inverseSplitString.join('');    
+    return inverseSplitString.join('');
 };
 
 /**
  * Alternating Case
- * 
- * alternatingCase takes its calling string and returns it with 
+ *
+ * alternatingCase takes its calling string and returns it with
  * all its characters in alternating case
- * 
+ *
  * @param {void}
  * @return{String} returns the calling string with its characters in
  * alternating cases.
@@ -199,17 +199,17 @@ String.prototype.alternatingCase = function() {
 
 /**
  * Get Middle
- * 
+ *
  * getMiddle gets its calling string. It returns the 2 middle
  * characters if the string's length is even
- * 
+ *
  * @param {void}
  * @return {String} returns the middle word(s) of the string
  */
 String.prototype.getMiddle = function() {
     // split the string just after any character, the regex matches
     // null after any character(including space) in the string
-    var value = this. split(/(?=)/g);
+    var value = this.split(/(?=)/g);
 
     var half = value.length / 2;
     if (value.length % 2 === 0) {
@@ -220,12 +220,12 @@ String.prototype.getMiddle = function() {
 
 /**
  * Number Words
- * 
+ *
  * numberWords returns the digits contained in the string
  * in their word form. For example 1 to one, 2 to two.
- * 
+ *
  * @param {void}
- * @return {String} return the word representation on the digits 
+ * @return {String} return the word representation on the digits
  * in the string
  */
 String.prototype.numberWords = function() {
@@ -235,7 +235,7 @@ String.prototype.numberWords = function() {
         'zero', 'one', 'two', 'three', 'four',
         'five', 'six', 'seven', 'eight', 'nine'
     ];
-    
+
     // split the string just after any character, the regex matches
     // null after any character(including space) in the string
     return this.split(/(?=)/g).map(function(item) {
@@ -247,37 +247,31 @@ String.prototype.numberWords = function() {
 };
 
 /**
- * Is Digit 
- * 
+ * Is Digit
+ *
  * isDigit tests if its calling string contains only one digit
  * or not.
- * 
+ *
  * @param {void}
- * @return {Boolean} returns true for single digit strings and 
+ * @return {Boolean} returns true for single digit strings and
  * false for otherwise
  */
 String.prototype.isDigit = function() {
-    /* the regex tests for strings that start with non-alphanumeric,
-       alphanumeric and digit values and have other values after
-       them. It matched double digits and more, digits with alphabets
-       before and after them. The second regex checks if the value is
-       a digit, the first check doesn't catch single alphabets thus 
-       necessitating the second regex */
     return (/^(\d)$/.test(this) && /\d/.test(this));
 };
 
 /**
  * Double Check
- * 
+ *
  * doubleCheck checks if its calling sring contains a double character
  * following after itself
- * 
+ *
  * @param {void}
  * @return {Boolean} returns true if the string has a double character
  * and false if not
  */
 String.prototype.doubleCheck = function() {
-    // checks if the samealphanumeric and non-alphanumeric characters 
+    // checks if the samealphanumeric and non-alphanumeric characters
     // exists side by side. \1 checks if the preceding group is repeated
     // after itself
     return /(.)\1/gi.test(this);
