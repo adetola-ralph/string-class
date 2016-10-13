@@ -7,7 +7,7 @@
  * @return {Boolean} returns true or false indicating if the string
  * has a vowel or not
  */
-String.prototype.hasVowels = function() {
+String.prototype.hasVowels = function () {
     var inputString = this;
     return /[aeiou]/i.test(inputString);
 };
@@ -20,14 +20,22 @@ String.prototype.hasVowels = function() {
  * @param {void}
  * @return {String} returns an upperCase version of the calling string
  */
-String.prototype.toUpper = function() {
+String.prototype.toUpper = function () {
     // the 'this' keyword represents the string calling the function
     return this.replace(/[a-z]/g, function(item, position, string) {
         return String.fromCharCode(string.charCodeAt(position) - 32);
     });
 };
 
-String.prototype.toLower = function() {
+/**
+ * To Lower
+ *
+ * toLower converts its calling string to all lowercase characters
+ *
+ * @param {void}
+ * @return {String} returns a lowercase version of the calling string
+ */
+String.prototype.toLower = function () {
     // the 'this' keyword represents the string calling the function
     return this.replace(/[A-Z]/g, function(item, position, string) {
         return String.fromCharCode(string.charCodeAt(position) + 32);
@@ -43,7 +51,7 @@ String.prototype.toLower = function() {
  * @return {String} returns the calling string with the first character
  * capitalised
  */
-String.prototype.ucFirst = function() {
+String.prototype.ucFirst = function () {
     // get the first character
     return this.toLower().replace(/^[a-z]/, function(item) {
         return item.toUpper();
@@ -61,7 +69,7 @@ String.prototype.ucFirst = function() {
  * @return {Boolean}returns a true or false indicating if the
  * string is a question or not
  */
-String.prototype.isQuestion = function() {
+String.prototype.isQuestion = function () {
     return /(((\w( )*)+\?)$)/g.test(this);
 };
 
@@ -73,14 +81,14 @@ String.prototype.isQuestion = function() {
  * @param {void}
  * @return {Object | Array} returns an array of strings
  */
-String.prototype.words = function() {
+String.prototype.words = function () {
     // tests for words that have a hyphen between them
     // like a compound name, also tests for words that
     // have an apostrophe
     var result = this.match(/(\w+([-']\w+)*)/g);
 
     // checks if result is null
-    if(result) {
+    if (result) {
         return result;
     }
 
@@ -98,7 +106,7 @@ String.prototype.words = function() {
  * @return {Number} returns the number of words in the calling
  * string
  */
-String.prototype.wordCount = function() {
+String.prototype.wordCount = function () {
     return this.words().length;
 };
 
@@ -112,8 +120,8 @@ String.prototype.wordCount = function() {
  * @return {String} returns the currency formatted string of
  * its calling string
  */
-String.prototype.toCurrency = function() {
-    if(/[^\d\.]/.test(this)) {
+String.prototype.toCurrency = function () {
+    if (/[^\d\.]/.test(this)) {
         return 'Please enter a valid digit string';
     }
 
@@ -130,7 +138,7 @@ String.prototype.toCurrency = function() {
 
     var result = splitString[0];
 
-    if(splitString.length > 1) {
+    if (splitString.length > 1) {
         // if the length of the digit after the decimal point
         // more than 2 then truncate the other digits
         splitString[1] = splitString[1].match(/(\d{1,2})/)[0];
@@ -150,7 +158,7 @@ String.prototype.toCurrency = function() {
  * @return {Number} returns a number representing the number
  * form of it calling string.
  */
-String.prototype.fromCurrency = function() {
+String.prototype.fromCurrency = function () {
     return Number(this.replace(/,/g, ''));
 };
 
@@ -164,12 +172,12 @@ String.prototype.fromCurrency = function() {
  * @return {String} returns a string which is in inverse case
  * of its calling string
  */
-String.prototype.inverseCase = function() {
+String.prototype.inverseCase = function () {
     var splitString = this.split('');
     var inverseSplitString = splitString.map(function(item) {
-        if(/[a-z]/.test(item)) {
+        if (/[a-z]/.test(item)) {
             return item.toUpper();
-        } else if(/[A-Z]/.test(item)) {
+        } else if (/[A-Z]/.test(item)) {
             return item.toLower();
         }
         return item;
@@ -187,9 +195,9 @@ String.prototype.inverseCase = function() {
  * @return{String} returns the calling string with its characters in
  * alternating cases.
  */
-String.prototype.alternatingCase = function() {
+String.prototype.alternatingCase = function () {
     return this.replace(/[a-zA-Z]/gi, function(item, position){
-        if(position % 2 === 0) {
+        if (position % 2 === 0) {
             return item.toLower();
         } else if (position % 2 !== 0) {
             return item.toUpper();
@@ -206,7 +214,7 @@ String.prototype.alternatingCase = function() {
  * @param {void}
  * @return {String} returns the middle word(s) of the string
  */
-String.prototype.getMiddle = function() {
+String.prototype.getMiddle = function () {
     // split the string just after any character, the regex matches
     // null after any character(including space) in the string
     var value = this.split(/(?=)/g);
@@ -228,7 +236,7 @@ String.prototype.getMiddle = function() {
  * @return {String} return the word representation on the digits
  * in the string
  */
-String.prototype.numberWords = function() {
+String.prototype.numberWords = function () {
     // array of numbers in their digit form, with each number
     // the same as the index position of the array
     var words = [
@@ -239,7 +247,7 @@ String.prototype.numberWords = function() {
     // split the string just after any character, the regex matches
     // null after any character(including space) in the string
     return this.split(/(?=)/g).map(function(item) {
-        if(/\d/.test(item)) {
+        if (/\d/.test(item)) {
             return words[parseInt(item, 10)];
         }
         return item;
@@ -256,7 +264,7 @@ String.prototype.numberWords = function() {
  * @return {Boolean} returns true for single digit strings and
  * false for otherwise
  */
-String.prototype.isDigit = function() {
+String.prototype.isDigit = function () {
     return (/^(\d)$/.test(this) && /\d/.test(this));
 };
 
@@ -270,7 +278,7 @@ String.prototype.isDigit = function() {
  * @return {Boolean} returns true if the string has a double character
  * and false if not
  */
-String.prototype.doubleCheck = function() {
+String.prototype.doubleCheck = function () {
     // checks if the samealphanumeric and non-alphanumeric characters
     // exists side by side. \1 checks if the preceding group is repeated
     // after itself
