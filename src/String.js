@@ -27,6 +27,14 @@ String.prototype.toUpper = function() {
     });
 };
 
+/**
+ * To Lower
+ *
+ * toLower converts its calling string to all lowercase characters
+ *
+ * @param {void}
+ * @return {String} returns a lowercase version of the calling string
+ */
 String.prototype.toLower = function() {
     // the 'this' keyword represents the string calling the function
     return this.replace(/[A-Z]/g, function(item, position, string) {
