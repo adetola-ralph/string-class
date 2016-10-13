@@ -22,7 +22,7 @@ String.prototype.hasVowels = function () {
  */
 String.prototype.toUpper = function () {
     // the 'this' keyword represents the string calling the function
-    return this.replace(/[a-z]/g, function(item, position, string) {
+    return this.replace(/[a-z]/g, function (item, position, string) {
         return String.fromCharCode(string.charCodeAt(position) - 32);
     });
 };
@@ -37,7 +37,7 @@ String.prototype.toUpper = function () {
  */
 String.prototype.toLower = function () {
     // the 'this' keyword represents the string calling the function
-    return this.replace(/[A-Z]/g, function(item, position, string) {
+    return this.replace(/[A-Z]/g, function (item, position, string) {
         return String.fromCharCode(string.charCodeAt(position) + 32);
     });
 };
@@ -53,7 +53,7 @@ String.prototype.toLower = function () {
  */
 String.prototype.ucFirst = function () {
     // get the first character
-    return this.toLower().replace(/^[a-z]/, function(item) {
+    return this.toLower().replace(/^[a-z]/, function (item) {
         return item.toUpper();
     });
 };
@@ -132,7 +132,7 @@ String.prototype.toCurrency = function () {
     // makes sure the pattern starts at the end of the string.
     // ?= and {3} asserts that there are exactly three digits
     splitString[0] = splitString[0]
-        .replace(/\d(?=([\d]{3})+$)/g, function(item){
+        .replace(/\d(?=([\d]{3})+$)/g, function (item){
         return item + ',';
     });
 
@@ -174,7 +174,7 @@ String.prototype.fromCurrency = function () {
  */
 String.prototype.inverseCase = function () {
     var splitString = this.split('');
-    var inverseSplitString = splitString.map(function(item) {
+    var inverseSplitString = splitString.map(function (item) {
         if (/[a-z]/.test(item)) {
             return item.toUpper();
         } else if (/[A-Z]/.test(item)) {
@@ -196,7 +196,7 @@ String.prototype.inverseCase = function () {
  * alternating cases.
  */
 String.prototype.alternatingCase = function () {
-    return this.replace(/[a-zA-Z]/gi, function(item, position){
+    return this.replace(/[a-zA-Z]/gi, function (item, position){
         if (position % 2 === 0) {
             return item.toLower();
         } else if (position % 2 !== 0) {
@@ -246,7 +246,7 @@ String.prototype.numberWords = function () {
 
     // split the string just after any character, the regex matches
     // null after any character(including space) in the string
-    return this.split(/(?=)/g).map(function(item) {
+    return this.split(/(?=)/g).map(function (item) {
         if (/\d/.test(item)) {
             return words[parseInt(item, 10)];
         }

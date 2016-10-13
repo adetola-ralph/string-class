@@ -4,7 +4,7 @@ function callMethod(text, method) {
 
 var form = document.querySelector("#form");
 
-form.addEventListener('submit', function(e) {
+form.addEventListener('submit', function (e) {
     e.preventDefault();
     var formData = new FormData(this);
     var textValue = formData.get('input-text');
