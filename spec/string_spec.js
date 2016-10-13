@@ -1,202 +1,202 @@
-describe('hasVowels()', function() {
-    it('should always return a boolean', function() {
+describe('hasVowels()', function () {
+    it('should always return a boolean', function () {
         expect('example string'.hasVowels()).toEqual(jasmine.any(Boolean));
     });
 
-    it('should return true if string has vowels', function() {
+    it('should return true if string has vowels', function () {
         expect('oreofe'.hasVowels()).toBe(true);
         expect(('AnDeLa').hasVowels()).toBe(true);
     });
 
-    it('should return false if string has no vowels', function() {
+    it('should return false if string has no vowels', function () {
         expect('why'.hasVowels()).toBe(false);
         expect(('twyndyllyngs').hasVowels()).toBe(false);
     });
 });
 
-describe('toUpper()', function() {
-    it('should always return a string', function() {
+describe('toUpper()', function () {
+    it('should always return a string', function () {
         expect('example string'.toUpper()).toEqual(jasmine.any(String));
     });
 
-    it('should return an upper case of the calling string', function() {
+    it('should return an upper case of the calling string', function () {
         expect('upper case'.toUpper()).toBe('UPPER CASE');
         expect('camelCase'.toUpper()).toBe('CAMELCASE');
         expect('MiXeD cAsE'.toUpper()).toBe('MIXED CASE');
     });
 });
 
-describe('toLower()', function() {
-    it('should return a string', function() {
+describe('toLower()', function () {
+    it('should return a string', function () {
         expect('example string'.toLower()).toEqual(jasmine.any(String));
     });
 
-    it('should return a lower case of the calling string', function() {
+    it('should return a lower case of the calling string', function () {
         expect('LOWER CASE'.toLower()).toBe('lower case');
         expect('PascalCaseD'.toLower()).toBe('pascalcased');
         expect('MiXeDcAsE'.toLower()).toBe('mixedcase');
     });
 });
 
-describe('ucFirst()', function() {
-    it('should return a string', function() {
+describe('ucFirst()', function () {
+    it('should return a string', function () {
         expect(''.ucFirst()).toEqual(jasmine.any(String));
     });
 
-    it('should convert first character to uppercase', function() {
+    it('should convert first character to uppercase', function () {
         expect('oreofe'.ucFirst()).toBe('Oreofe');
         expect('Ralph'.ucFirst()).toBe('Ralph');
         expect('rALPH'.ucFirst()).toBe('Ralph');
     });
 });
 
-describe('isQuestion()', function() {
-    it('should always return a boolean', function() {
+describe('isQuestion()', function () {
+    it('should always return a boolean', function () {
         expect('example string'.isQuestion()).toEqual(jasmine.any(Boolean));
     });
 
-    it('should return true if string is a question', function() {
+    it('should return true if string is a question', function () {
         expect('is a question?'.isQuestion()).toBe(true);
         expect('Is Another Question?'.isQuestion()).toBe(true);
     });
 
-    it('should return false if string is not a question', function() {
+    it('should return false if string is not a question', function () {
         expect('is not a question'.isQuestion()).toBe(false);
         expect('Is not Another Question'.isQuestion()).toBe(false);
     });
 });
 
-describe('words()', function() {
-    it('should always return a typeof object', function() {
+describe('words()', function () {
+    it('should always return a typeof object', function () {
         expect('this is an example string'.words())
             .toEqual(jasmine.any(Object));
     });
 
-    it('should always return an array', function() {
+    it('should always return an array', function () {
         expect('this is an example string'.words() instanceof Array).toBe(true);
     });
 
-    it('should return an array of words in the string', function() {
+    it('should return an array of words in the string', function () {
         expect('this is a string of words'.words()).toEqual(['this', 'is', 
         'a', 'string', 'of', 'words']);
         expect('My name is Ore-ofe'.words())
             .toEqual(['My', 'name', 'is', 'Ore-ofe']);
     });
 
-    it('should return empty array if no words are found', function() {
+    it('should return empty array if no words are found', function () {
         expect(',./;[]=-'.words()).toEqual([]);
     });
 });
 
-describe('wordCount()', function(){
-    it('should always return type Number', function(){
+describe('wordCount()', function (){
+    it('should always return type Number', function (){
         expect('this string'.wordCount()).toEqual(jasmine.any(Number));
     });
 
-    it('should return number of words in a string', function() {
+    it('should return number of words in a string', function () {
         expect('this is a string of words'.wordCount()).toBe(6);
         expect('My name is Ore-ofe'.wordCount()).toBe(4);
     });
 
-    it('should return 0 if string contains no word', function() {
+    it('should return 0 if string contains no word', function () {
         expect(',./;[]=-'.wordCount()).toBe(0);
     });
 });
 
-describe('toCurrency()', function() {
-    it('should return a string', function() {
+describe('toCurrency()', function () {
+    it('should return a string', function () {
         expect('111111.00'.toCurrency()).toEqual(jasmine.any(String));
     });
 
-    it('should return a currency formatted string', function() {
+    it('should return a currency formatted string', function () {
         expect('111111.89'.toCurrency()).toBe('111,111.89');
         expect('2111111.89'.toCurrency()).toBe('2,111,111.89');
     });
 
-    it('should truncate excess numbers after decimal point', function() {
+    it('should truncate excess numbers after decimal point', function () {
         expect('1234.123'.toCurrency()).toBe('1,234.12');
     });
 });
 
-describe('fromCurrency()', function() {
-    it('should return a number', function() {
+describe('fromCurrency()', function () {
+    it('should return a number', function () {
         expect('111,111.00'.fromCurrency()).toEqual(jasmine.any(Number));
     });
 
-    it('should return number of its calling string', function() {
+    it('should return number of its calling string', function () {
         expect('3,123,456.78'.fromCurrency()).toBe(3123456.78);
     });
 });
 
-describe('inverseCase()', function() {
-    it('should return a string', function() {
+describe('inverseCase()', function () {
+    it('should return a string', function () {
         expect('Mr Ben'.inverseCase()).toEqual(jasmine.any(String));
     });
 
-    it('should return inverse characters of its calling string', function() {
+    it('should return inverse characters of its calling string', function () {
         expect('Mr Ben'.inverseCase()).toBe('mR bEN');
         expect('Big Mighty Mouse'.inverseCase()).toBe('bIG mIGHTY mOUSE');
     });
 });
 
-describe('alternatingCase()', function() {
-    it('should return a string', function() {
+describe('alternatingCase()', function () {
+    it('should return a string', function () {
         expect('Onomatopoeia'.alternatingCase()).toEqual(jasmine.any(String));
     });
 
-    it('should return alternating case string', function() {
+    it('should return alternating case string', function () {
         expect('Onomatopoeia'.alternatingCase()).toBe('oNoMaToPoEiA');
     });
 });
 
-describe('getMiddle()', function() {
-    it('should return a string', function() {
+describe('getMiddle()', function () {
+    it('should return a string', function () {
         expect('read'.getMiddle()).toEqual(jasmine.any(String));
     });
 
-    it('should return middle of the word', function() {
+    it('should return middle of the word', function () {
         expect('read'.getMiddle()).toBe('ea');
         expect('rap'.getMiddle()).toBe('a');
         expect('hendricks'.getMiddle()).toBe('r');
     });
 });
 
-describe('numberWords()', function() {
-    it('should return a string', function() {
+describe('numberWords()', function () {
+    it('should return a string', function () {
         expect('1234'.numberWords()).toEqual(jasmine.any(String));
     });
 
-    it('should return the string word equivalent of the digits', function(){
+    it('should return the string word equivalent of the digits', function (){
         expect('123'.numberWords()).toBe('one two three');
     });
 });
 
-describe('isDigit()', function(){
-    it('should return a boolean', function() {
+describe('isDigit()', function (){
+    it('should return a boolean', function () {
         expect('1'.isDigit()).toEqual(jasmine.any(Boolean));
     });
 
-    it('should return true for a single digit', function() {
+    it('should return true for a single digit', function () {
         expect('1'.isDigit()).toBe(true);
     });
 
-    it('should return false for a non single digit', function() {
+    it('should return false for a non single digit', function () {
         expect('12'.isDigit()).toBe(false);
         expect('a'.isDigit()).toBe(false);
     });
 });
 
-describe('doubleCheck()', function() {
-    it('should return a boolean', function() {
+describe('doubleCheck()', function () {
+    it('should return a boolean', function () {
         expect('aa'.doubleCheck()).toEqual(jasmine.any(Boolean));
     });
 
-    it('should return true if string has double characters', function() {
+    it('should return true if string has double characters', function () {
         expect('aa'.doubleCheck()).toBe(true);
         expect('oreofeooluwapo'.doubleCheck()).toBe(true);
     });
 
-    it('should return false if string has no double characters', function() {
+    it('should return false if string has no double characters', function () {
         expect('ab'.doubleCheck()).toBe(false);
         expect('oreofe'.doubleCheck()).toBe(false);
     });
