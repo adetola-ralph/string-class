@@ -88,7 +88,7 @@ String.prototype.words = function () {
     var result = this.match(/(\w+([-']\w+)*)/g);
 
     // checks if result is null
-    if(result) {
+    if (result) {
         return result;
     }
 
@@ -121,7 +121,7 @@ String.prototype.wordCount = function () {
  * its calling string
  */
 String.prototype.toCurrency = function () {
-    if(/[^\d\.]/.test(this)) {
+    if (/[^\d\.]/.test(this)) {
         return 'Please enter a valid digit string';
     }
 
@@ -138,7 +138,7 @@ String.prototype.toCurrency = function () {
 
     var result = splitString[0];
 
-    if(splitString.length > 1) {
+    if (splitString.length > 1) {
         // if the length of the digit after the decimal point
         // more than 2 then truncate the other digits
         splitString[1] = splitString[1].match(/(\d{1,2})/)[0];
@@ -175,9 +175,9 @@ String.prototype.fromCurrency = function () {
 String.prototype.inverseCase = function () {
     var splitString = this.split('');
     var inverseSplitString = splitString.map(function(item) {
-        if(/[a-z]/.test(item)) {
+        if (/[a-z]/.test(item)) {
             return item.toUpper();
-        } else if(/[A-Z]/.test(item)) {
+        } else if (/[A-Z]/.test(item)) {
             return item.toLower();
         }
         return item;
@@ -197,7 +197,7 @@ String.prototype.inverseCase = function () {
  */
 String.prototype.alternatingCase = function () {
     return this.replace(/[a-zA-Z]/gi, function(item, position){
-        if(position % 2 === 0) {
+        if (position % 2 === 0) {
             return item.toLower();
         } else if (position % 2 !== 0) {
             return item.toUpper();
@@ -247,7 +247,7 @@ String.prototype.numberWords = function () {
     // split the string just after any character, the regex matches
     // null after any character(including space) in the string
     return this.split(/(?=)/g).map(function(item) {
-        if(/\d/.test(item)) {
+        if (/\d/.test(item)) {
             return words[parseInt(item, 10)];
         }
         return item;
